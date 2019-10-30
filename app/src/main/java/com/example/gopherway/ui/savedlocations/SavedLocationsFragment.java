@@ -21,7 +21,7 @@ public class SavedLocationsFragment extends Fragment {
         savedLocationsViewModel =
                 ViewModelProviders.of(this).get(SavedLocationsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_saved_locations, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
+        final TextView textView = root.findViewById(R.id.text_saved_locations);
         savedLocationsViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
