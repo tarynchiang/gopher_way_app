@@ -1,4 +1,4 @@
-package com.example.gopherway.ui.gallery;
+package com.example.gopherway.ui.savedlocations;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,17 +12,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import com.example.gopherway.R;
 
-public class GalleryFragment extends Fragment {
+public class SavedLocationsFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private SavedLocationsViewModel savedLocationsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
+        savedLocationsViewModel =
+                ViewModelProviders.of(this).get(SavedLocationsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_saved_locations, container, false);
         final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(this, new Observer<String>() {
+        savedLocationsViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
