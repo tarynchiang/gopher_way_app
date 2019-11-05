@@ -1,5 +1,6 @@
 package com.example.gopherway;
 
+import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -14,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,5 +60,20 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    /**Called when the user taps the Search button */
+    public void search(View view){
+        EditText editText = (EditText) findViewById(R.id.editText);
+        EditText editText2 = (EditText) findViewById(R.id.editText2);
+        String currentLocation = editText.getText().toString();
+        String destination = editText2.getText().toString();
+        UniversityLocations test = new UniversityLocations();
+        int x = UniversityLocations.findBuilding(currentLocation);
+        int y = UniversityLocations.findBuilding(destination);
+        Intent intent = new Intent(this, DisplayNavigationOptions.class);
+        intent.putExtra("CurrentLocation", x);
+        intent.putExtra("Destination", y);
+        startActivity(intent);
     }
 }

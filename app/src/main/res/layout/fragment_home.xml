@@ -11,6 +11,7 @@
         android:layout_width="143dp"
         android:layout_height="62dp"
         android:layout_marginBottom="32dp"
+        android:onClick="search"
         android:text="Search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
