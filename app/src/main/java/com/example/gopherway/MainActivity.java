@@ -71,7 +71,10 @@ public class MainActivity extends AppCompatActivity {
         UniversityLocations test = new UniversityLocations();
         int x = UniversityLocations.findBuilding(currentLocation);
         int y = UniversityLocations.findBuilding(destination);
-        Intent intent = new Intent(this, DisplayNavigationOptions.class);
+        //Intent intent = new Intent(this, DisplayNavigationOptions.class);
+
+        //short circuiting to this screen for now
+        Intent intent = new Intent(this, DirectionListActivity.class);
         intent.putExtra("CurrentLocation", x);
         intent.putExtra("Destination", y);
         startActivity(intent);
