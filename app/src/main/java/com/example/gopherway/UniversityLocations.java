@@ -36,12 +36,23 @@ public class UniversityLocations {
     }
 
     //Returns array of integers which correspond with what directional image to display for each step for each route
+    // 0 = forward
+    // 1 = left
+    // 2 = right
+    // 3 = stairs
+    // 4 = elevator
     public static int[][] getImageArr() {
         int[] error = {-1};
-        int[] M_M_Images = {};
-        int[] K_W_Images = {};
-        int[] C_D_Images = {};
+        int[] M_M_Images = {};  //TODO: Fill in path image keys
+        int[] K_W_Images = {};  //TODO: Fill in path image keys
+        int[] C_D_Images = {};  //TODO: Fill in path image keys
         int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};
+        return result;
+    }
+
+    public static int[][] getRouteImageArr(){
+        //TODO: fill this out
+        int[][] result = {};
         return result;
     }
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DisplayNavigationOptions extends AppCompatActivity {
@@ -12,9 +13,13 @@ public class DisplayNavigationOptions extends AppCompatActivity {
     Button backButton;
     Button infoButton;
     Button nextButton;
+    ImageView directionImage;
+    ImageView routeImage;
     TextView directions;
     int routeOption=0;
-    String[][] directionArr = UniversityLocations.getDirectionArr();
+    String[][] directionTextArr = UniversityLocations.getDirectionArr();
+    int[][] directionImageArr = UniversityLocations.getImageArr();
+    int[][] routeImageArr = UniversityLocations.getRouteImageArr();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,8 @@ public class DisplayNavigationOptions extends AppCompatActivity {
         setContentView(R.layout.activity_display_navigation_options);
 
         Intent intent=getIntent();
+
+        //Load id's for buildings that were entered on main screen
         int currentLocation = (int)(intent.getIntExtra("CurrentLocation",0));
         int destination = (int)(intent.getIntExtra("Destination",0));
 
@@ -32,7 +39,17 @@ public class DisplayNavigationOptions extends AppCompatActivity {
 
         //TextView for Direction Information -- Display first Step
         directions = (TextView)findViewById(R.id.textView2);
-        directions.setText(directionArr[routeOption][0]);
+        directions.setText(directionTextArr[routeOption][0]);
+
+        //Image view for direction arrows
+        directionImage = (ImageView)findViewById(R.id.imageView4);
+        //TODO: Load in images properly
+        //directionImage.setImageDrawable(directionImageArr[routeOption][0]);
+
+        //Image view for direction arrows
+        routeImage = (ImageView)findViewById(R.id.imageView3);
+        //TODO: Load in images properly
+        //routeImage.setImageDrawable(routeImageArr[routeOption][0]);
 
         //Bottom Page Button Navigation
         backButton = (Button) findViewById(R.id.button2);
