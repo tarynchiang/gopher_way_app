@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         //Intent intent = new Intent(this, DisplayNavigationOptions.class);
 
         //short circuiting to this screen for now
-        Intent intent = new Intent(this, DirectionListActivity.class);
+        Intent intent = new Intent(this, DisplayNavigationOptions.class);
         intent.putExtra("CurrentLocation", x);
         intent.putExtra("Destination", y);
         startActivity(intent);
