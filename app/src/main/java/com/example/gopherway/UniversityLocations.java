@@ -2,7 +2,6 @@ package com.example.gopherway;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class UniversityLocations {
 
@@ -17,6 +16,8 @@ public class UniversityLocations {
         map.put("Moos Tower", 2);
         map.put("Rapson", 3);
         map.put("Ford Hall", 4);
+        map.put("Coffman", 5);
+        map.put("Diehl", 6);
         return map;
     }
 
@@ -24,12 +25,23 @@ public class UniversityLocations {
         return buildingList.get(building);
     }
 
+    //Returns array of Strings describing each step for each route
     public static String[][] getDirectionArr() {
         String[] error = {"Error: Path not found"};
-        String[] McNamaraToMoosTower = {};//TODO: Fill in path directions
-        String[] RapsonToFord = {};//TODO: Fill in path directions
-        String[] CoffmanToDiehl = {};//TODO: Fill in path directions
-        String[][] result = {error, McNamaraToMoosTower, RapsonToFord, CoffmanToDiehl};
+        String[] M_M_Directions = {};//TODO: Fill in path directions
+        String[] K_W_Directions = {};//TODO: Fill in path directions
+        String[] C_D_Directions = {};//TODO: Fill in path directions
+        String[][] result = {error, M_M_Directions, K_W_Directions, C_D_Directions};
+        return result;
+    }
+
+    //Returns array of integers which correspond with what directional image to display for each step for each route
+    public static int[][] getImageArr() {
+        int[] error = {-1};
+        int[] M_M_Images = {};
+        int[] K_W_Images = {};
+        int[] C_D_Images = {};
+        int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};
         return result;
     }
 }
