@@ -54,7 +54,7 @@ public class UniversityLocations {
     //Returns array of drawables for each directional image to be loaded per step of each route (left, right, etc)
     public static int[][] getImageArr() {
         int[] error = {-1};
-        int[] M_M_Images = {R.drawable.forward, R.drawable.upstair, R.drawable.forward, R.drawable.upstair, R.drawable.right, R.drawable.right, R.drawable.forward, R.drawable.left, R.drawable.forward, R.drawable.forward, R.drawable.upstair, R.drawable.right};
+        int[] M_M_Images = {R.drawable.ahead, R.drawable.downstairs, R.drawable.ahead, R.drawable.elevator_up, R.drawable.right, R.drawable.right, R.drawable.ahead, R.drawable.ahead, R.drawable.left, R.drawable.ahead, R.drawable.doubledoor, R.drawable.ahead, R.drawable.elevator_down, R.drawable.right};
         int[] K_W_Images = {};  //TODO: Fill in path image keys
         int[] C_D_Images = {};  //TODO: Fill in path image keys
         int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};

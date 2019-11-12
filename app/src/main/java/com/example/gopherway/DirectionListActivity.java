@@ -39,7 +39,7 @@ public class DirectionListActivity extends AppCompatActivity {
                         "Walk straight",
                         "Until doorway",
                         60,
-                        R.drawable.forward));
+                        R.drawable.ahead));
 
         directionList.add(
                 new Direction(
@@ -47,7 +47,7 @@ public class DirectionListActivity extends AppCompatActivity {
                         "Go Up stairs on left",
                         "",
                         0,
-                        R.drawable.upstair));
+                        R.drawable.upstairs));
 
         DirectionAdapter adapter = new DirectionAdapter(this, directionList);
 

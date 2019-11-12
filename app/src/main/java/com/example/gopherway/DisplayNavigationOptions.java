@@ -46,12 +46,10 @@ public class DisplayNavigationOptions extends AppCompatActivity {
 
         //Image view for direction arrows
         directionImage = (ImageView)findViewById(R.id.imageView4);
-        //TODO: Load in images properly
         directionImage.setImageResource(directionImageArr[routeOption][stepNumber]);
 
         //Image view for route images
         routeImage = (ImageView)findViewById(R.id.imageView3);
-        //TODO: Load in images properly
         routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
 
         //Bottom Page Button Navigation
