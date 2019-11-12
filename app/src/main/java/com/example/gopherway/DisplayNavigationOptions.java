@@ -3,7 +3,9 @@ package com.example.gopherway;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,7 +18,8 @@ public class DisplayNavigationOptions extends AppCompatActivity {
     ImageView directionImage;
     ImageView routeImage;
     TextView directions;
-    int routeOption=0;
+    int routeOption =0;
+    int stepNumber = 0;
     String[][] directionTextArr = UniversityLocations.getDirectionArr();
     int[][] directionImageArr = UniversityLocations.getImageArr();
     int[][] routeImageArr = UniversityLocations.getRouteImageArr();
@@ -39,17 +42,17 @@ public class DisplayNavigationOptions extends AppCompatActivity {
 
         //TextView for Direction Information -- Display first Step
         directions = (TextView)findViewById(R.id.textView2);
-        directions.setText(directionTextArr[routeOption][0]);
+        directions.setText(directionTextArr[routeOption][stepNumber]);
 
         //Image view for direction arrows
         directionImage = (ImageView)findViewById(R.id.imageView4);
         //TODO: Load in images properly
-        //directionImage.setImageDrawable(directionImageArr[routeOption][0]);
+        directionImage.setImageResource(directionImageArr[routeOption][stepNumber]);
 
-        //Image view for direction arrows
+        //Image view for route images
         routeImage = (ImageView)findViewById(R.id.imageView3);
         //TODO: Load in images properly
-        //routeImage.setImageDrawable(routeImageArr[routeOption][0]);
+        routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
 
         //Bottom Page Button Navigation
         backButton = (Button) findViewById(R.id.button2);
@@ -57,9 +60,24 @@ public class DisplayNavigationOptions extends AppCompatActivity {
         nextButton = (Button) findViewById(R.id.button4);
     }
 
-    public void backButtonClick(){}
+    public void backButtonClick(View view){
+        stepNumber--;
+        //Update directional text
+        directions.setText(directionTextArr[routeOption][stepNumber]);
+        //Update directional image
+        directionImage.setImageResource(directionImageArr[routeOption][stepNumber]);
+        //Update route image
+        routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);}
 
     public void moreInfoClick(){}
 
-    public void nextButtonClick(){}
+    public void nextButtonClick(View view){
+        stepNumber++;
+        //Update directional text
+        directions.setText(directionTextArr[routeOption][stepNumber]);
+        //Update directional image
+        directionImage.setImageResource(directionImageArr[routeOption][stepNumber]);
+        //Update route image
+        routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
+    }
 }

@@ -1,5 +1,7 @@
 package com.example.gopherway;
 
+import android.graphics.drawable.Drawable;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,7 +15,7 @@ public class UniversityLocations {
     private static Map<String, Integer> createMap() {
         Map<String, Integer> map = new HashMap<String, Integer>();
         map.put("McNamara", 1);
-        map.put("Moos Tower", 2);
+        map.put("Moose Tower", 2);
         map.put("Rapson", 3);
         map.put("Ford Hall", 4);
         map.put("Coffman", 5);
@@ -42,35 +44,30 @@ public class UniversityLocations {
                 "Go through the tan double doors",
                 "Follow hallway to the end and go through the doors.",
                 "Take elevator down to the basement (level B).",
-                "Take a right and follow hallway to Moos Tower."};//TODO: Fill in path directions
+                "Take a right and follow hallway to Moos Tower."};
         String[] RapsonToFord = {};//TODO: Fill in path directions
         String[] CoffmanToDiehl = {};//TODO: Fill in path directions
         String[][] result = {error, McNamaraToMoosTower, RapsonToFord, CoffmanToDiehl};
-        String[] M_M_Directions = {};//TODO: Fill in path directions
-        String[] K_W_Directions = {};//TODO: Fill in path directions
-        String[] C_D_Directions = {};//TODO: Fill in path directions
-        String[][] result = {error, M_M_Directions, K_W_Directions, C_D_Directions};
         return result;
     }
 
-    //Returns array of integers which correspond with what directional image to display for each step for each route
-    // 0 = forward
-    // 1 = left
-    // 2 = right
-    // 3 = stairs
-    // 4 = elevator
+    //Returns array of drawables for each directional image to be loaded per step of each route (left, right, etc)
     public static int[][] getImageArr() {
         int[] error = {-1};
-        int[] M_M_Images = {};  //TODO: Fill in path image keys
+        int[] M_M_Images = {R.drawable.forward, R.drawable.upstair, R.drawable.forward, R.drawable.upstair, R.drawable.right, R.drawable.right, R.drawable.forward, R.drawable.left, R.drawable.forward, R.drawable.forward, R.drawable.upstair, R.drawable.right};
         int[] K_W_Images = {};  //TODO: Fill in path image keys
         int[] C_D_Images = {};  //TODO: Fill in path image keys
         int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};
         return result;
     }
 
+    //Returns array of drawables for each image to be loaded per step of each route
     public static int[][] getRouteImageArr(){
-        //TODO: fill this out
-        int[][] result = {};
+        int[] error = {-1};
+        int[] M_M_Images = new int[]{R.drawable.mm1,R.drawable.mm2,R.drawable.mm3,R.drawable.mm4,R.drawable.mm5,R.drawable.mm6,R.drawable.mm7,R.drawable.mm8,R.drawable.mm9,R.drawable.mm10,R.drawable.mm11,R.drawable.mm12,R.drawable.mm13,R.drawable.mm14};
+        int[] K_W_Images = {};  //TODO: Fill in path image keys
+        int[] C_D_Images = {};  //TODO: Fill in path image keys
+        int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};
         return result;
     }
 }
