@@ -17,7 +17,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_saved_locations">Saved Locations</string>
     <string name="menu_travel_history">Travel History</string>
-    <string name="menu_tools">Tools</string>
+    <string name="menu_weather">Weather</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 </resources>
