@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     android:background="#5C818080">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="800dp"
+        android:layout_height="850dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/northrop" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="143dp"
@@ -22,9 +33,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:background="@color/cardview_light_background"
         android:ems="10"
         android:hint="Where are you at?"
         android:inputType="textPersonName"
+        android:lineSpacingExtra="8sp"
+        android:padding="6dp"
         android:shadowColor="#00FAFAFA"
         app:layout_constraintBottom_toTopOf="@+id/editText2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,9 +49,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:background="@color/cardview_light_background"
         android:ems="10"
         android:hint="Where are you going?"
         android:inputType="textPersonName"
+        android:lineSpacingExtra="8sp"
+        android:padding="6dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -64,4 +81,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
