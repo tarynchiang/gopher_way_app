@@ -30,7 +30,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.RouteViewHol
     public RouteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.layout_directions, null);
+        View view = inflater.inflate(R.layout.layout_routes, null);
         return new RouteViewHolder(view);
     }
 
