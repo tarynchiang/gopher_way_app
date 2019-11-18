@@ -29,16 +29,17 @@ public class DisplayNavigationOptions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_navigation_options);
 
-        Intent intent=getIntent();
+        Intent intent = getIntent();
 
         //Load id's for buildings that were entered on main screen
         int currentLocation = (int)(intent.getIntExtra("CurrentLocation",0));
         int destination = (int)(intent.getIntExtra("Destination",0));
 
         //Decide which route option to begin displaying
-        if(currentLocation == 1 && destination ==2){routeOption=1;}
+        if(currentLocation == 0 && destination == 1){routeOption=1;}
         else if(currentLocation == 3 && destination ==4){routeOption=2;}
         else if(currentLocation == 5 && destination ==6){routeOption=3;}
+        else{routeOption=1;}
 
         //TextView for Direction Information -- Display first Step
         directions = (TextView)findViewById(R.id.textView2);

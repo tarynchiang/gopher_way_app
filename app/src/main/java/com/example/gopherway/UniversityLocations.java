@@ -54,7 +54,20 @@ public class UniversityLocations {
     //Returns array of drawables for each directional image to be loaded per step of each route (left, right, etc)
     public static int[][] getImageArr() {
         int[] error = {-1};
-        int[] M_M_Images = {R.drawable.ahead, R.drawable.downstairs, R.drawable.ahead, R.drawable.elevator_up, R.drawable.right, R.drawable.right, R.drawable.ahead, R.drawable.ahead, R.drawable.left, R.drawable.ahead, R.drawable.doubledoor, R.drawable.ahead, R.drawable.elevator_down, R.drawable.right};
+        int[] M_M_Images = {R.drawable.ahead,
+                R.drawable.downstairs,
+                R.drawable.ahead,
+                R.drawable.elevator_up,
+                R.drawable.right,
+                R.drawable.right,
+                R.drawable.ahead,
+                R.drawable.ahead,
+                R.drawable.left,
+                R.drawable.ahead,
+                R.drawable.doubledoor,
+                R.drawable.ahead,
+                R.drawable.elevator_down,
+                R.drawable.right};
         int[] K_W_Images = {};  //TODO: Fill in path image keys
         int[] C_D_Images = {};  //TODO: Fill in path image keys
         int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};
@@ -64,7 +77,20 @@ public class UniversityLocations {
     //Returns array of drawables for each image to be loaded per step of each route
     public static int[][] getRouteImageArr(){
         int[] error = {-1};
-        int[] M_M_Images = new int[]{R.drawable.mm1,R.drawable.mm2,R.drawable.mm3,R.drawable.mm4,R.drawable.mm5,R.drawable.mm6,R.drawable.mm7,R.drawable.mm8,R.drawable.mm9,R.drawable.mm10,R.drawable.mm11,R.drawable.mm12,R.drawable.mm13,R.drawable.mm14};
+        int[] M_M_Images = new int[]{R.drawable.mm1,
+                R.drawable.mm2,
+                R.drawable.mm3,
+                R.drawable.mm4,
+                R.drawable.mm5,
+                R.drawable.mm6,
+                R.drawable.mm7,
+                R.drawable.mm8,
+                R.drawable.mm9,
+                R.drawable.mm10,
+                R.drawable.mm11,
+                R.drawable.mm12,
+                R.drawable.mm13,
+                R.drawable.mm14};
         int[] K_W_Images = {};  //TODO: Fill in path image keys
         int[] C_D_Images = {};  //TODO: Fill in path image keys
         int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};
