@@ -59,7 +59,7 @@ public class DirectionAdapter extends RecyclerView.Adapter<DirectionAdapter.Dire
             textViewDirection = itemView.findViewById(R.id.textViewDirection);
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
             textViewDistance = itemView.findViewById(R.id.textViewDistance);
-            imageView = itemView.findViewById(R.id.imageView);
+            imageView = itemView.findViewById(R.id.nav_display_picture);
         }
     }
 }

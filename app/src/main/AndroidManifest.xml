@@ -13,8 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".LoginActivity"
+            android:label="Sign In"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".DirectionListActivity"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DisplayNavigationOptions"
             android:parentActivityName=".MainActivity">
