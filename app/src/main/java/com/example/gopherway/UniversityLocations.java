@@ -74,7 +74,7 @@ public class UniversityLocations {
         return result;
     }
 
-    //Returns array of drawables for each image to be loaded per step of each route
+    //Returns array of drawables for each real life image to be loaded per step of each route
     public static int[][] getRouteImageArr(){
         int[] error = {-1};
         int[] M_M_Images = new int[]{R.drawable.mm1,
@@ -91,6 +91,16 @@ public class UniversityLocations {
                 R.drawable.mm12,
                 R.drawable.mm13,
                 R.drawable.mm14};
+        int[] K_W_Images = {};  //TODO: Fill in path image keys
+        int[] C_D_Images = {};  //TODO: Fill in path image keys
+        int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};
+        return result;
+    }
+
+    //Returns array of drawables for each image of the map to be loaded per step of each route
+    public static int[][] getMapImageArr(){
+        int[] error = {-1};
+        int[] M_M_Images = {};  //TODO: Fill in path image keys
         int[] K_W_Images = {};  //TODO: Fill in path image keys
         int[] C_D_Images = {};  //TODO: Fill in path image keys
         int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};

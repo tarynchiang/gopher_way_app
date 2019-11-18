@@ -18,11 +18,12 @@ public class DisplayNavigationOptions extends AppCompatActivity {
     ImageView directionImage;
     ImageView routeImage;
     TextView directions;
-    int routeOption =0;
+    int routeOption = 0;
     int stepNumber = 0;
     String[][] directionTextArr = UniversityLocations.getDirectionArr();
     int[][] directionImageArr = UniversityLocations.getImageArr();
     int[][] routeImageArr = UniversityLocations.getRouteImageArr();
+    int[][] routeMapArr = UniversityLocations.getMapImageArr();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,11 @@ public class DisplayNavigationOptions extends AppCompatActivity {
         //Image view for route images
         routeImage = (ImageView)findViewById(R.id.imageView3);
         routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
+
+        //COMENT BACK IN ONCE MAP IMAGES ARE IMPLEMENTED - currently shows real life images but should be showing map images
+        //Image view for route map images
+        //routeImage = (ImageView)findViewById(R.id.imageView3);
+        //routeImage.setImageResource(routeMapArr[routeOption][stepNumber]);
 
         //Bottom Page Button Navigation
         backButton = (Button) findViewById(R.id.button2);
