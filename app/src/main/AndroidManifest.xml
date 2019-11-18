@@ -19,6 +19,9 @@
             android:name=".DirectionListActivity"
             android:parentActivityName=".MainActivity" />
         <activity
+            android:name=".RouteListActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".DisplayNavigationOptions"
             android:parentActivityName=".MainActivity">
             <meta-data

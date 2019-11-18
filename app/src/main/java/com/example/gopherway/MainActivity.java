@@ -95,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         updateHeader(acct, navigationView);
 
+//        Intent intent = new Intent(this, RouteListActivity.class);
+//        startActivity(intent);
     }
 
 
