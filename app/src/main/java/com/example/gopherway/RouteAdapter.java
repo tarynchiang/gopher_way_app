@@ -42,9 +42,6 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.RouteViewHol
         //binding the data with the viewholder views
         holder.textViewStart.setText(route.getStart());
         holder.textViewEnd.setText(route.getEnd());
-
-//        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(product.getImage()));
-
     }
 
 
@@ -57,7 +54,6 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.RouteViewHol
     class RouteViewHolder extends RecyclerView.ViewHolder {
 
         TextView textViewStart, textViewEnd;
-        ImageView imageView;
 
         public RouteViewHolder(View itemView) {
             super(itemView);

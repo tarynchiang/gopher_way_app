@@ -23,11 +23,11 @@ public class RouteListActivity extends AppCompatActivity {
         setContentView(R.layout.fragment_saved_locations);
 
         //getting the recyclerview from xml
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView) findViewById(R.id.routeCard);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //initializing the productlist
+        //initializing the routelist
         routeList = new ArrayList<>();
 
 
