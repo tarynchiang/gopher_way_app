@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.NetworkOnMainThreadException;
 import androidx.annotation.Nullable;
@@ -28,12 +29,16 @@ import java.util.Locale;
 import java.net.*;
 import java.util.Scanner;
 
+import static java.lang.Math.pow;
+
 public class WeatherFragment extends Fragment {
 
     private WeatherViewModel toolsViewModel;
 
-    TextView addressTxt, updated_atTxt, statusTxt, tempTxt, temp_minTxt, temp_maxTxt, sunriseTxt,
-            sunsetTxt, windTxt, pressureTxt, humidityTxt;
+    TextView addressTxt, updated_atTxt, statusTxt, tempTxt, temp_lowTxt, temp_highTxt, sunriseTxt,
+            sunsetTxt, windTxt, pressureTxt, humidityTxtm, windchillTxt, frostTxt;
+
+    ImageView statusImg;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -59,11 +64,14 @@ public class WeatherFragment extends Fragment {
         //updated_atTxt = (TextView)getView().findViewById(R.id.updated_at);
         statusTxt = (TextView) getView().findViewById(R.id.status);
         tempTxt = (TextView) getView().findViewById(R.id.temp);
-        //temp_minTxt = (TextView)getView().findViewById(R.id.temp_min);
-        //temp_maxTxt = (TextView)getView().findViewById(R.id.temp_max);
+        temp_lowTxt = (TextView)getView().findViewById(R.id.lowtemp);
+        temp_highTxt = (TextView)getView().findViewById(R.id.hightemp);
         //sunriseTxt = (TextView)getView().findViewById(R.id.sunrise);
         //sunsetTxt = (TextView)getView().findViewById(R.id.sunset);
-        //windTxt = (TextView)getView().findViewById(R.id.wind);
+        windTxt = (TextView)getView().findViewById(R.id.wind);
+        windchillTxt = (TextView)getView().findViewById(R.id.windchill);
+        frostTxt = (TextView)getView().findViewById(R.id.frost);
+        statusImg = (ImageView)getView().findViewById(R.id.statusImage);
         //pressureTxt = (TextView)getView().findViewById(R.id.pressure);
         //humidityTxt = (TextView)getView().findViewById(R.id.humidity);
 
@@ -130,16 +138,78 @@ public class WeatherFragment extends Fragment {
                 JSONObject wind = jsonObj.getJSONObject("wind");
                 JSONObject weather = jsonObj.getJSONArray("weather").getJSONObject(0);
 
+                int fbrisk = 0;
+
                 Long updatedAt = jsonObj.getLong("dt");
                 String updatedAtText = "Updated at: " + new SimpleDateFormat("MM/dd/yyyy hh:mm a", Locale.ENGLISH).format(new Date(updatedAt * 1000));
-                String temp = main.getString("temp") + "°F";
+                int t = main.getInt("temp");
+                int t_low = main.getInt("temp_min");
+                int t_high = main.getInt("temp_max");
+                int w = wind.getInt("speed");
+                int id = weather.getInt("id");
+                double wchill = 70;
 
+                if(t <= -28){
+                    fbrisk = 2;
+                } else if (t <= -12){
+                    fbrisk = 1;
+                }
+
+                if(t<=50 && w>=5) {
+                    wchill = 35.74 + 0.6215 * t - 35.658 * (pow(w, 0.16)) + 0.4275 * t * (pow(w, 0.16));
+                    int wchillint = (int)wchill;
+                    String wct = new Integer(wchillint).toString();
+                    windchillTxt.setText("Wind chill: " + wct + "°F");
+                    if(wchill <= -72){
+                        fbrisk = 3;
+                    } else if(wchill <= -28){
+                        fbrisk = 2;
+                    }
+                } else {
+                    windchillTxt.setText("Wind chill: Not applicable");
+                }
+
+                String temp = new Integer(t).toString();
+                String temp_low = new Integer(t_low).toString();
+                String temp_high = new Integer(t_high).toString();
                 String weatherDescription = weather.getString("description");
+                String windt = new Integer(w).toString() + " mph";
 
                 String address = jsonObj.getString("name") + ", " + sys.getString("country");
+                String fbwarn0 = "No frostbite warning";
+                String fbwarn1 = "No frostbite warning, but very cold";
+                String fbwarn2 = "Warning: Risk of frostbite!";
+                String fbwarn3 = "Warning: Extreme danger of frostbite!";
+
+                if(fbrisk == 0){
+                    frostTxt.setText(fbwarn0);
+                } else if(fbrisk == 1) {
+                    frostTxt.setText(fbwarn1);
+                } else if(fbrisk == 2) {
+                    frostTxt.setText(fbwarn2);
+                } else if(fbrisk == 3) {
+                    frostTxt.setText(fbwarn3);
+                }
+
+                if(id <= 200 && id < 300){
+                    statusImg.setImageResource(R.drawable.w_thunder);
+                } else if(id <= 300 && id < 400){
+                    statusImg.setImageResource(R.drawable.w_rain);
+                }else if(id <= 500 && id < 600){
+                    statusImg.setImageResource(R.drawable.w_rain);
+                }else if(id <= 600 && id < 700){
+                    statusImg.setImageResource(R.drawable.w_snow);
+                }else if(id == 800) {
+                    statusImg.setImageResource(R.drawable.w_sun);
+                }else{
+                    statusImg.setImageResource(R.drawable.w_clouds);
+                }
 
                 tempTxt.setText(temp);
+                temp_highTxt.setText(temp_high+"°F");
+                temp_lowTxt.setText(temp_low+"°F");
                 statusTxt.setText(weatherDescription);
+                windTxt.setText(windt);
 
 
             } catch (JSONException e) {
