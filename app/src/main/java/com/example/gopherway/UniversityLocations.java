@@ -66,16 +66,13 @@ public class UniversityLocations {
                 "At tunnel split, choose path on the left",
                 "Head down the final hall and enter Williamson Hall"};
                 String[] CoffmanToDiehl = {
-                "Take elevator down to the second floor."
+                "Take elevator down to the second floor.",
                   "Go straight to access the P_W Bulidings.",
                  "Turn left at the sign to Mayo building.",
                 "walk across the tunnel, turn left.",
-                 "walk across the Mayo building."
+                 "walk across the Mayo building.",
                 "Take the elevator down to the lower floor.",
                 "walk across the tunnel, enter Coffman Hall."
-
-
-
         };//TODO: Fill in path directions
         String[][] result = {error, McNamaraToMoosTower, KolthoffToWilliamson, CoffmanToDiehl};
         return result;

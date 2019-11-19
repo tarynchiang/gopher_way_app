@@ -17,7 +17,7 @@ public class RouteAdapter extends RecyclerView.Adapter<RouteAdapter.RouteViewHol
     //this context we will use to inflate the layout
     private Context mCtx;
 
-    //we are storing all the products in a list
+    //we are storing all the route in a list
     private List<Route> routeList;
 
     //getting the context and product list with constructor

@@ -10,7 +10,7 @@ public class SavedLocationsViewModel extends ViewModel {
 
     public SavedLocationsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Saved Locations");
+        mText.setValue("");
     }
 
     public LiveData<String> getText() {
