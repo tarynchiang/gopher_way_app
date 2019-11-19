@@ -65,7 +65,18 @@ public class UniversityLocations {
                 "At the end of the tunnel, turn left, following signs to Williamson Hall",
                 "At tunnel split, choose path on the left",
                 "Head down the final hall and enter Williamson Hall"};
-        String[] CoffmanToDiehl = {};//TODO: Fill in path directions
+                String[] CoffmanToDiehl = {
+                "Take elevator down to the second floor."
+                  "Go straight to access the P_W Bulidings.",
+                 "Turn left at the sign to Mayo building.",
+                "walk across the tunnel, turn left.",
+                 "walk across the Mayo building."
+                "Take the elevator down to the lower floor.",
+                "walk across the tunnel, enter Coffman Hall."
+
+
+
+        };//TODO: Fill in path directions
         String[][] result = {error, McNamaraToMoosTower, KolthoffToWilliamson, CoffmanToDiehl};
         return result;
     }
@@ -107,7 +118,15 @@ public class UniversityLocations {
                 R.drawable.left,
                 R.drawable.left,
                 R.drawable.ahead, };
-        int[] C_D_Images = {};  //TODO: Fill in path image keys
+        int[] C_D_Images = {
+                R.drawable.elevator_down,
+                R.drawable.ahead,
+                R.drawable.left,
+                R.drawable.left,
+            R.drawable.ahead,
+         R.drawable.elevator_down,
+            R.drawable.ahead
+        };  
         int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};
         return result;
     }
@@ -149,7 +168,16 @@ public class UniversityLocations {
                 R.drawable.kw18,
                 R.drawable.kw19,
                 R.drawable.kw20 };
-        int[] C_D_Images = {};  //TODO: Fill in path image keys
+        int[] C_D_Images = {
+               R.drawable.l1,
+                R.drawable.l1,
+                R.drawable.l2,
+                R.drawable.l3,
+                R.drawable.l3,
+                R.drawable.l3,
+                R.drawable.l4
+        
+        };  
         int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};
         return result;
     }
