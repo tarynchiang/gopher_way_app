@@ -16,12 +16,10 @@ public class UniversityLocations {
         Map<String, Integer> map = new HashMap<String, Integer>();
         map.put("McNamara", 1);
         map.put("Moose Tower", 2);
-        map.put("Rapson", 3);
-        map.put("Ford Hall", 4);
-        map.put("Coffman", 5);
-        map.put("Diehl", 6);
-        map.put("Kolthoff", 7);
-        map.put("Williamson", 8);
+        map.put("Diehl", 3);
+        map.put("Coffman", 4);
+        map.put("Kolthoff", 5);
+        map.put("Williamson", 6);
         return map;
     }
 
@@ -159,9 +157,9 @@ public class UniversityLocations {
     //Returns array of drawables for each image of the map to be loaded per step of each route
     public static int[][] getMapImageArr(){
         int[] error = {-1};
-        int[] M_M_Images = {};  //TODO: Fill in path image keys
-        int[] K_W_Images = {};  //TODO: Fill in path image keys
-        int[] C_D_Images = {};  //TODO: Fill in path image keys
+        int[] M_M_Images = {R.drawable.m1,R.drawable.m2,R.drawable.m3,R.drawable.m4,R.drawable.m4,R.drawable.m4,R.drawable.m5,R.drawable.m6,R.drawable.m6,R.drawable.m6,R.drawable.m7,R.drawable.m8,R.drawable.m8,R.drawable.m9};
+        int[] K_W_Images = {R.drawable.k1,R.drawable.k2,R.drawable.k3,R.drawable.k4,R.drawable.k5,R.drawable.k6,R.drawable.k7};
+        int[] C_D_Images = {R.drawable.l1,R.drawable.l2,R.drawable.l3,R.drawable.l4};
         int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};
         return result;
     }

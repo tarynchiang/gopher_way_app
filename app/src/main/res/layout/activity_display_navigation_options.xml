@@ -49,6 +49,7 @@
         android:layout_marginBottom="32dp"
         android:layout_marginTop="8dp"
         android:text="More Info"
+        android:onClick="moreInfoClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button4"
         app:layout_constraintStart_toEndOf="@+id/button2"

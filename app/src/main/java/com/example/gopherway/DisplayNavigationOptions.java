@@ -20,6 +20,7 @@ public class DisplayNavigationOptions extends AppCompatActivity {
     TextView directions;
     int routeOption = 0;
     int stepNumber = 0;
+    boolean displayMap = true;
     String[][] directionTextArr = UniversityLocations.getDirectionArr();
     int[][] directionImageArr = UniversityLocations.getImageArr();
     int[][] routeImageArr = UniversityLocations.getRouteImageArr();
@@ -37,7 +38,7 @@ public class DisplayNavigationOptions extends AppCompatActivity {
         int destination = (int)(intent.getIntExtra("Destination",0));
 
         //Decide which route option to begin displaying
-        if(currentLocation == 0 && destination == 1){routeOption=1;}
+        if(currentLocation == 1 && destination == 2){routeOption=1;}
         else if(currentLocation == 3 && destination ==4){routeOption=2;}
         else if(currentLocation == 5 && destination ==6){routeOption=3;}
         else{routeOption=1;}
@@ -51,13 +52,12 @@ public class DisplayNavigationOptions extends AppCompatActivity {
         directionImage.setImageResource(directionImageArr[routeOption][stepNumber]);
 
         //Image view for route images
-        routeImage = (ImageView)findViewById(R.id.imageView3);
-        routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
-
-        //COMENT BACK IN ONCE MAP IMAGES ARE IMPLEMENTED - currently shows real life images but should be showing map images
-        //Image view for route map images
         //routeImage = (ImageView)findViewById(R.id.imageView3);
-        //routeImage.setImageResource(routeMapArr[routeOption][stepNumber]);
+        //routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
+
+        //Image view for route map images
+        routeImage = (ImageView)findViewById(R.id.imageView3);
+        routeImage.setImageResource(routeMapArr[routeOption][stepNumber]);
 
         //Bottom Page Button Navigation
         backButton = (Button) findViewById(R.id.button2);
@@ -65,24 +65,46 @@ public class DisplayNavigationOptions extends AppCompatActivity {
         nextButton = (Button) findViewById(R.id.button4);
     }
 
-    public void backButtonClick(View view){
-        stepNumber--;
+    public void backButtonClick(View view) {
+
+        if (stepNumber != 0) {
+            stepNumber--;
+        }
         //Update directional text
         directions.setText(directionTextArr[routeOption][stepNumber]);
         //Update directional image
         directionImage.setImageResource(directionImageArr[routeOption][stepNumber]);
         //Update route image
-        routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);}
+        if (displayMap) {
+            routeImage.setImageResource(routeMapArr[routeOption][stepNumber]);
+        } else {
+            routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
+        }
+    }
 
-    public void moreInfoClick(){}
+    public void moreInfoClick(View view){
+        displayMap = !displayMap;
+        if (displayMap) {
+            routeImage.setImageResource(routeMapArr[routeOption][stepNumber]);
+        } else {
+            routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
+        }
+    }
 
     public void nextButtonClick(View view){
-        stepNumber++;
+        if(stepNumber != directionTextArr[routeOption].length-1) {
+            stepNumber++;
+        }
         //Update directional text
         directions.setText(directionTextArr[routeOption][stepNumber]);
         //Update directional image
         directionImage.setImageResource(directionImageArr[routeOption][stepNumber]);
         //Update route image
-        routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
+        if(displayMap) {
+            routeImage.setImageResource(routeMapArr[routeOption][stepNumber]);
+        }
+        else{
+            routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
+        }
     }
 }
