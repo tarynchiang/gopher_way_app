@@ -20,6 +20,8 @@ public class UniversityLocations {
         map.put("Ford Hall", 4);
         map.put("Coffman", 5);
         map.put("Diehl", 6);
+        map.put("Kolthoff", 7);
+        map.put("Williamson", 8);
         return map;
     }
 
@@ -45,9 +47,28 @@ public class UniversityLocations {
                 "Follow hallway to the end and go through the doors.",
                 "Take elevator down to the basement (level B).",
                 "Take a right and follow hallway to Moos Tower."};
-        String[] RapsonToFord = {};//TODO: Fill in path directions
+        String[] KolthoffToWilliamson = { "take elevator up to the 4th floor.",
+                "turn right and head down hall 50m.",
+                "turn the first left and head down hallway for another 50m.",
+                "enter Smith Hall, walk 10m and turn right.",
+                "walk to the end of the hall and turn left.",
+                "walk 50 meters forward, towards the elevator",
+                "take elevator down to level B",
+                "exit elevator, turn left and walk towards the doors at the end of the corridor. Continue through doors and enter Walter Library",
+                "at end of corridor, turn left then immediately the first right",
+                "walk to the end of hallway (80m), turn right, and then left following hallway",
+                "walk straight 100m",
+                "Enter Johnson Hall. At end of hall, turn right",
+                "Enter door labeled Northrop Garage and head up the stairs",
+                "At the top of the stairs, open second door and enter Northrop Garage",
+                "Walk across garage (200m) towards Morrill Hall",
+                "Turn left and walk another 100m straight (down parking garage slope)",
+                "Enter door towards Williamson Hall and follow tunnel path",
+                "At the end of the tunnel, turn left, following signs to Williamson Hall",
+                "At tunnel split, choose path on the left",
+                "Head down the final hall and enter Williamson Hall"};
         String[] CoffmanToDiehl = {};//TODO: Fill in path directions
-        String[][] result = {error, McNamaraToMoosTower, RapsonToFord, CoffmanToDiehl};
+        String[][] result = {error, McNamaraToMoosTower, KolthoffToWilliamson, CoffmanToDiehl};
         return result;
     }
 
@@ -68,7 +89,26 @@ public class UniversityLocations {
                 R.drawable.ahead,
                 R.drawable.elevator_down,
                 R.drawable.right};
-        int[] K_W_Images = {};  //TODO: Fill in path image keys
+        int[] K_W_Images = { R.drawable.elevator_up,
+                R.drawable.right,
+                R.drawable.left,
+                R.drawable.right,
+                R.drawable.left,
+                R.drawable.ahead,
+                R.drawable.elevator_down,
+                R.drawable.doubledoor,
+                R.drawable.left,
+                R.drawable.ahead,
+                R.drawable.ahead,
+                R.drawable.right,
+                R.drawable.upstairs,
+                R.drawable.door,
+                R.drawable.ahead,
+                R.drawable.left,
+                R.drawable.door,
+                R.drawable.left,
+                R.drawable.left,
+                R.drawable.ahead, };
         int[] C_D_Images = {};  //TODO: Fill in path image keys
         int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};
         return result;
@@ -91,7 +131,26 @@ public class UniversityLocations {
                 R.drawable.mm12,
                 R.drawable.mm13,
                 R.drawable.mm14};
-        int[] K_W_Images = {};  //TODO: Fill in path image keys
+        int[] K_W_Images = new int[]{ R.drawable.kw1,
+                R.drawable.kw2,
+                R.drawable.kw3,
+                R.drawable.kw4,
+                R.drawable.kw5,
+                R.drawable.kw6,
+                R.drawable.kw7,
+                R.drawable.kw8,
+                R.drawable.kw9,
+                R.drawable.kw10,
+                R.drawable.kw11,
+                R.drawable.kw12,
+                R.drawable.kw13,
+                R.drawable.kw14,
+                R.drawable.kw15,
+                R.drawable.kw16,
+                R.drawable.kw17,
+                R.drawable.kw18,
+                R.drawable.kw19,
+                R.drawable.kw20 };
         int[] C_D_Images = {};  //TODO: Fill in path image keys
         int[][] result = {error, M_M_Images, K_W_Images, C_D_Images};
         return result;
