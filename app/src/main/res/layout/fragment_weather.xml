@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorWeatherColor"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="120dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="12dp"
+        android:gravity="right"
+        android:text="TextView"
+        android:textColor="@color/colorWeatherColor"
+        android:textSize="72sp"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="°F"
+        android:textColor="@color/colorWeatherColor"
+        android:textSize="36sp"
+        app:layout_constraintStart_toEndOf="@+id/temp"
+        app:layout_constraintTop_toTopOf="@+id/temp" />
+
+    <ImageView
+        android:id="@+id/statusImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/temp"
+        app:layout_constraintTop_toBottomOf="@+id/temp"
+        app:srcCompat="@drawable/ahead" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:text="TextView"
+        android:textColor="@color/colorWeatherColor"
+        app:layout_constraintBottom_toBottomOf="@+id/statusImage"
+        app:layout_constraintStart_toEndOf="@+id/statusImage"
+        app:layout_constraintTop_toTopOf="@+id/statusImage" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="45dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginRight="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_weather" />
+
+    <ImageView
+        android:id="@+id/highImg"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:srcCompat="@drawable/w_high"
+        tools:srcCompat="@drawable/w_high" />
+
+    <ImageView
+        android:id="@+id/lowImg"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/highImg"
+        app:layout_constraintTop_toBottomOf="@+id/highImg"
+        app:srcCompat="@drawable/w_low"
+        tools:srcCompat="@drawable/w_low" />
+
+    <TextView
+        android:id="@+id/hightemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:text="TextView"
+        android:textColor="@color/colorWeatherColor"
+        app:layout_constraintBottom_toBottomOf="@+id/highImg"
+        app:layout_constraintStart_toEndOf="@+id/highImg"
+        app:layout_constraintTop_toTopOf="@+id/highImg" />
+
+    <TextView
+        android:id="@+id/lowtemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:text="TextView"
+        android:textColor="@color/colorWeatherColor"
+        app:layout_constraintBottom_toBottomOf="@+id/lowImg"
+        app:layout_constraintStart_toEndOf="@+id/lowImg"
+        app:layout_constraintTop_toBottomOf="@+id/highImg" />
+
+    <ImageView
+        android:id="@+id/windImg"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/statusImage"
+        app:layout_constraintStart_toStartOf="@+id/statusImage"
+        app:layout_constraintTop_toBottomOf="@+id/statusImage"
+        app:srcCompat="@drawable/wind" />
+
+    <TextView
+        android:id="@+id/wind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:text="TextView"
+        android:textColor="@color/colorWeatherColor"
+        app:layout_constraintBottom_toBottomOf="@+id/windImg"
+        app:layout_constraintStart_toEndOf="@+id/windImg"
+        app:layout_constraintTop_toTopOf="@+id/windImg" />
+
+    <ImageView
+        android:id="@+id/windchillImg"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/windImg"
+        app:layout_constraintStart_toStartOf="@+id/windImg"
+        app:layout_constraintTop_toBottomOf="@+id/windImg"
+        app:srcCompat="@drawable/flake" />
+
+    <TextView
+        android:id="@+id/windchill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:text="TextView"
+        android:textColor="@color/colorWeatherColor"
+        app:layout_constraintBottom_toBottomOf="@+id/windchillImg"
+        app:layout_constraintStart_toEndOf="@+id/windchillImg"
+        app:layout_constraintTop_toTopOf="@+id/windchillImg" />
+
+    <TextView
+        android:id="@+id/frost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textColor="@color/colorWeatherColor"
+        app:layout_constraintStart_toStartOf="@+id/windchill"
+        app:layout_constraintTop_toBottomOf="@+id/windchill" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
