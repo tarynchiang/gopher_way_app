@@ -7,14 +7,15 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DisplayNavigationOptions extends AppCompatActivity {
 
-    Button backButton;
-    Button infoButton;
-    Button nextButton;
+    ImageButton backButton;
+    ImageButton infoButton;
+    ImageButton nextButton;
     ImageView directionImage;
     ImageView routeImage;
     TextView directions;
@@ -60,9 +61,9 @@ public class DisplayNavigationOptions extends AppCompatActivity {
         routeImage.setImageResource(routeMapArr[routeOption][stepNumber]);
 
         //Bottom Page Button Navigation
-        backButton = (Button) findViewById(R.id.button2);
-        infoButton = (Button) findViewById(R.id.button3);
-        nextButton = (Button) findViewById(R.id.button4);
+        backButton = (ImageButton) findViewById(R.id.imageButton2);
+        infoButton = (ImageButton) findViewById(R.id.imageButton3);
+        nextButton = (ImageButton) findViewById(R.id.imageButton);
     }
 
     public void backButtonClick(View view) {
@@ -86,8 +87,10 @@ public class DisplayNavigationOptions extends AppCompatActivity {
         displayMap = !displayMap;
         if (displayMap) {
             routeImage.setImageResource(routeMapArr[routeOption][stepNumber]);
+            infoButton.setImageResource(R.drawable.image);
         } else {
             routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
+            infoButton.setImageResource(R.drawable.map);
         }
     }
 
