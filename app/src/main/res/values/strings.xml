@@ -8,12 +8,44 @@
     <string name="action_settings">Settings</string>
 
     <string-array name = "buildings">
-        <item>McNamara</item>
-        <item>Moos</item>
-        <item>Rapson</item>
-        <item>Ford</item>
-        <item>Kolthoff</item>
-        <item>Williamson</item>
+        <item>Akerman Hall</item>
+        <item>Amundson Hall</item>
+        <item>Armory</item>
+        <item>Bell Museum</item>
+        <item>Boynton </item>
+        <item>Civil Engineering </item>
+        <item>Coffman Memorial</item>
+        <item>Diehl Hall</item>
+        <item>Folwell Hall</item>
+        <item>Ford Hall</item>
+        <item>Graduate Hotel</item>
+        <item>Hassellmo Hall</item>
+        <item>Jackson Hall</item>
+        <item>Johnston Hall</item>
+        <item>Jones Hall</item>
+        <item>Keller Hall</item>
+        <item>Kolthoff Hall</item>
+        <item>Lind Hall</item>
+        <item>Mayo Auditiorium</item>
+        <item>Mayo Building</item>
+        <item>McNamara Alumni Center</item>
+        <item>Mechanical Engineering</item>
+        <item>Mollecular Biology</item>
+        <item>Moos Tower</item>
+        <item>Morrill Hall</item>
+        <item>Murphy Hall</item>
+        <item>Nolte Ctr</item>
+        <item>P-W Building</item>
+        <item>Smith Hall</item>
+        <item>Tate Lab</item>
+        <item>U of M Medical Center</item>
+        <item>VFW Cancer Research Ctr</item>
+        <item>Vincent Hall</item>
+        <item>Walter DTC</item>
+        <item>Washington Ave Parking Ramp</item>
+        <item>Weaver-Densford Hall</item>
+        <item>Wiliamson Hall</item>
+        <item>Yudolf Hall</item>
     </string-array>
 
     <string name="menu_home">Home</string>

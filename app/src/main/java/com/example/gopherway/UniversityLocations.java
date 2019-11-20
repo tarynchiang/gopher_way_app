@@ -65,7 +65,7 @@ public class UniversityLocations {
                 "At the end of the tunnel, turn left, following signs to Williamson Hall",
                 "At tunnel split, choose path on the left",
                 "Head down the final hall and enter Williamson Hall"};
-                String[] CoffmanToDiehl = {
+        String[] CoffmanToDiehl = {
                 "Take elevator down to the second floor.",
                   "Go straight to access the P_W Bulidings.",
                  "Turn left at the sign to Mayo building.",

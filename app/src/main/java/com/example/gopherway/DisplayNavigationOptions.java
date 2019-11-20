@@ -39,9 +39,9 @@ public class DisplayNavigationOptions extends AppCompatActivity {
         int destination = (int)(intent.getIntExtra("Destination",0));
 
         //Decide which route option to begin displaying
-        if(currentLocation == 1 && destination == 2){routeOption=1;}
-        else if(currentLocation == 3 && destination ==4){routeOption=2;}
-        else if(currentLocation == 5 && destination ==6){routeOption=3;}
+        if(currentLocation == 20 && destination == 23){routeOption=1;}
+        else if(currentLocation == 16 && destination == 36){routeOption=2;}
+        else if(currentLocation == 6 && destination ==7){routeOption=3;}
         else{routeOption=1;}
 
         //TextView for Direction Information -- Display first Step
