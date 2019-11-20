@@ -42,23 +42,40 @@ public class SavedLocationsFragment extends Fragment {
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
+                             ViewGroup container, Bundle savedInstanceState) {
         savedLocationsViewModel =
                 ViewModelProviders.of(this).get(SavedLocationsViewModel.class);
 
-//        routeList = new ArrayList<>();
-//        routeList.add(
-//                new Route(
-//                        1,
-//                        "McNamara",
-//                        "Moos"));
-//
-//        routeList.add(
-//                new Route(
-//                        1,
-//                        "Rapson",
-//                        "Coffman"));
 
+        //access start and destination text
+//        View s = inflater.inflate(R.layout.fragment_home, container, false);
+//        Spinner select_start = (Spinner) s.findViewById(R.id.spinner_start);
+//        String start = select_start.getSelectedItem().toString();
+//
+//        View d = inflater.inflate(R.layout.fragment_home, container, false);
+//        Spinner select_destination = (Spinner) d.findViewById(R.id.spinner_destination);
+//        String destination = select_destination.getSelectedItem().toString();
+
+//        routeList.add(
+//                new Route(
+//                        1,
+//                        "Macnarmara",
+//                        "Moose"));
+//        routeList.add(
+//                new Route(
+//                        1,
+//                        "Diehl",
+//                        "Coffman"));
+//        routeList.add(
+//                new Route(
+//                        1,
+//                       "Kolthoff",
+//                        "Williamson"));
+
+
+        //identify whether a file exist
+        //if not exist,create a new file called savedRoute
+        //else store info into file
         this.loadRoutes();
 
         View root = inflater.inflate(R.layout.fragment_saved_locations, container, false);
