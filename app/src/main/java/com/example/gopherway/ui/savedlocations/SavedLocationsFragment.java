@@ -92,9 +92,9 @@ public class SavedLocationsFragment extends Fragment {
             BufferedReader br = new BufferedReader(isr);
             StringBuilder sb = new StringBuilder();
             String text;
-
             while ((text = br.readLine()) != null) {
-                routeList.add(new Route(1,text,text));
+                String[] text_parts = text.split(",");
+                routeList.add(new Route(1,"Start Location:" + text_parts[0],"End Location:" + text_parts[1]));
             }
         }catch (FileNotFoundException e) {
             e.printStackTrace();
