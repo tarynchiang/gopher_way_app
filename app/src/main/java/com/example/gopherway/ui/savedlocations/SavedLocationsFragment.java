@@ -27,6 +27,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.File;
 
 public class SavedLocationsFragment extends Fragment {
 
@@ -39,18 +46,20 @@ public class SavedLocationsFragment extends Fragment {
         savedLocationsViewModel =
                 ViewModelProviders.of(this).get(SavedLocationsViewModel.class);
 
-        routeList = new ArrayList<>();
-        routeList.add(
-                new Route(
-                        1,
-                        "McNamara",
-                        "Moos"));
+//        routeList = new ArrayList<>();
+//        routeList.add(
+//                new Route(
+//                        1,
+//                        "McNamara",
+//                        "Moos"));
+//
+//        routeList.add(
+//                new Route(
+//                        1,
+//                        "Rapson",
+//                        "Coffman"));
 
-        routeList.add(
-                new Route(
-                        1,
-                        "Rapson",
-                        "Coffman"));
+        this.loadRoutes();
 
         View root = inflater.inflate(R.layout.fragment_saved_locations, container, false);
 
@@ -71,6 +80,35 @@ public class SavedLocationsFragment extends Fragment {
         });
 
         return root;
+    }
+
+
+    public void loadRoutes(){
+        FileInputStream fis = null;
+        routeList = new ArrayList<>();
+        try{
+            fis = getActivity().openFileInput("savedRoutes");
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+
+            while ((text = br.readLine()) != null) {
+                routeList.add(new Route(1,text,text));
+            }
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
 
