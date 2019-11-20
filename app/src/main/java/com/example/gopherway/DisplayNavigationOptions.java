@@ -3,10 +3,8 @@ package com.example.gopherway;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,7 +20,7 @@ public class DisplayNavigationOptions extends AppCompatActivity {
     int routeOption = 0;
     int stepNumber = 0;
     boolean displayMap = true;
-    String[][] directionTextArr = UniversityLocations.getDirectionArr();
+    Direction[][] directionArr = UniversityLocations.getDirectionArr();
     int[][] directionImageArr = UniversityLocations.getImageArr();
     int[][] routeImageArr = UniversityLocations.getRouteImageArr();
     int[][] routeMapArr = UniversityLocations.getMapImageArr();
@@ -39,18 +37,18 @@ public class DisplayNavigationOptions extends AppCompatActivity {
         int destination = (int)(intent.getIntExtra("Destination",0));
 
         //Decide which route option to begin displaying
-        if(currentLocation == 20 && destination == 23){routeOption=1;}
-        else if(currentLocation == 16 && destination == 36){routeOption=2;}
-        else if(currentLocation == 6 && destination ==7){routeOption=3;}
-        else{routeOption=1;}
+        if(currentLocation == 20 && destination == 23){routeOption=0;}
+        else if(currentLocation == 16 && destination == 36){routeOption=1;}
+        else if(currentLocation == 6 && destination ==7){routeOption=2;}
+        else{routeOption=0;}
 
         //TextView for Direction Information -- Display first Step
         directions = (TextView)findViewById(R.id.textView2);
-        directions.setText(directionTextArr[routeOption][stepNumber]);
+        directions.setText(directionArr[routeOption][stepNumber].getDescription());
 
         //Image view for direction arrows
         directionImage = (ImageView)findViewById(R.id.imageView4);
-        directionImage.setImageResource(directionImageArr[routeOption][stepNumber]);
+        directionImage.setImageResource(directionArr[routeOption][stepNumber].getDirImg());
 
         //Image view for route images
         //routeImage = (ImageView)findViewById(R.id.imageView3);
@@ -58,7 +56,7 @@ public class DisplayNavigationOptions extends AppCompatActivity {
 
         //Image view for route map images
         routeImage = (ImageView)findViewById(R.id.imageView3);
-        routeImage.setImageResource(routeMapArr[routeOption][stepNumber]);
+        routeImage.setImageResource(directionArr[routeOption][stepNumber].getmapImg());
 
         //Bottom Page Button Navigation
         backButton = (ImageButton) findViewById(R.id.imageButton2);
@@ -72,42 +70,42 @@ public class DisplayNavigationOptions extends AppCompatActivity {
             stepNumber--;
         }
         //Update directional text
-        directions.setText(directionTextArr[routeOption][stepNumber]);
+        directions.setText(directionArr[routeOption][stepNumber].getDescription());
         //Update directional image
-        directionImage.setImageResource(directionImageArr[routeOption][stepNumber]);
+        directionImage.setImageResource(directionArr[routeOption][stepNumber].getDirImg());
         //Update route image
         if (displayMap) {
-            routeImage.setImageResource(routeMapArr[routeOption][stepNumber]);
+            routeImage.setImageResource(directionArr[routeOption][stepNumber].getmapImg());
         } else {
-            routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
+            routeImage.setImageResource(directionArr[routeOption][stepNumber].getrealImg());
         }
     }
 
     public void moreInfoClick(View view){
         displayMap = !displayMap;
         if (displayMap) {
-            routeImage.setImageResource(routeMapArr[routeOption][stepNumber]);
+            routeImage.setImageResource(directionArr[routeOption][stepNumber].getmapImg());
             infoButton.setImageResource(R.drawable.image);
         } else {
-            routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
+            routeImage.setImageResource(directionArr[routeOption][stepNumber].getrealImg());
             infoButton.setImageResource(R.drawable.map);
         }
     }
 
     public void nextButtonClick(View view){
-        if(stepNumber != directionTextArr[routeOption].length-1) {
+        if(stepNumber != directionArr[routeOption].length-1) {
             stepNumber++;
         }
         //Update directional text
-        directions.setText(directionTextArr[routeOption][stepNumber]);
+        directions.setText(directionArr[routeOption][stepNumber].getDescription());
         //Update directional image
-        directionImage.setImageResource(directionImageArr[routeOption][stepNumber]);
+        directionImage.setImageResource(directionArr[routeOption][stepNumber].getDirImg());
         //Update route image
         if(displayMap) {
-            routeImage.setImageResource(routeMapArr[routeOption][stepNumber]);
+            routeImage.setImageResource(directionArr[routeOption][stepNumber].getmapImg());
         }
         else{
-            routeImage.setImageResource(routeImageArr[routeOption][stepNumber]);
+            routeImage.setImageResource(directionArr[routeOption][stepNumber].getrealImg());
         }
     }
 }

@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_saved_locations, R.id.nav_travel_history,
-                R.id.nav_weather, R.id.nav_share, R.id.nav_send)
+                R.id.nav_home, R.id.nav_weather, R.id.nav_saved_locations, R.id.nav_travel_history,
+                 R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -155,28 +155,18 @@ public class MainActivity extends AppCompatActivity {
 
     /**Called when the user taps the Search button */
     public void search(View view){
-        /*
-        EditText editText = (EditText) findViewById(R.id.editText);
-        EditText editText2 = (EditText) findViewById(R.id.editText2);
-        String currentLocation = editText.getText().toString();
-        String destination = editText2.getText().toString();
-        UniversityLocations test = new UniversityLocations();
-        int x = UniversityLocations.findBuilding(currentLocation);
-        int y = UniversityLocations.findBuilding(destination);
-        //Intent intent = new Intent(this, DisplayNavigationOptions.class);
-        */
-
+    //public void search(int startID, int destinationID){
         //Changed Input to selection from list rather than reading in a string
-        Spinner select_start = (Spinner) findViewById(R.id.spinner_start);
-        Spinner select_destination = (Spinner) findViewById(R.id.spinner_destination);
+        //Spinner select_start = (Spinner) findViewById(R.id.spinner_start);
+        //Spinner select_destination = (Spinner) findViewById(R.id.spinner_destination);
         //String currentLocation = select_start.getText().toString();
         //String destination = select_destination.getText().toString();
-        int startID = select_start.getSelectedItemPosition();
-        int destinationID = select_destination.getSelectedItemPosition();
+        //int startID = select_start.getSelectedItemPosition();
+        //int destinationID = select_destination.getSelectedItemPosition();
         //short circuiting to this screen for now
         Intent intent = new Intent(this, DisplayNavigationOptions.class);
-        intent.putExtra("CurrentLocation", startID);
-        intent.putExtra("Destination", destinationID);
+        //intent.putExtra("CurrentLocation", startID);
+        //intent.putExtra("Destination", destinationID);
         startActivity(intent);
     }
 }

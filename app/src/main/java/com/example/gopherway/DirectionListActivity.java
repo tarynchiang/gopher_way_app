@@ -25,29 +25,6 @@ public class DirectionListActivity extends AppCompatActivity {
 
 
         //Example directions, will be generated after path is calculated
-        directionList.add(
-                new Direction(
-                        1,
-                        "Take right",
-                        "At end of hall",
-                        20,
-                        R.drawable.right));
-
-        directionList.add(
-                new Direction(
-                        1,
-                        "Walk straight",
-                        "Until doorway",
-                        60,
-                        R.drawable.ahead));
-
-        directionList.add(
-                new Direction(
-                        1,
-                        "Go Up stairs on left",
-                        "",
-                        0,
-                        R.drawable.upstairs));
 
         DirectionAdapter adapter = new DirectionAdapter(this, directionList);
 

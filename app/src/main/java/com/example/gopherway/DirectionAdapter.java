@@ -33,11 +33,11 @@ public class DirectionAdapter extends RecyclerView.Adapter<DirectionAdapter.Dire
     public void onBindViewHolder(DirectionViewHolder holder, int position) {
         Direction direction = directionList.get(position);
 
-        holder.textViewDirection.setText(direction.getTitle());
-        holder.textViewShortDesc.setText(direction.getShortdesc());
-        holder.textViewDistance.setText(String.valueOf(direction.getDistance()));
+        //holder.textViewDirection.setText(direction.getTitle());
+        //holder.textViewShortDesc.setText(direction.getShortdesc());
+        //holder.textViewDistance.setText(String.valueOf(direction.getDistance()));
 
-        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(direction.getImage()));
+        //holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(direction.getImage()));
 
     }
 
