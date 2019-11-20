@@ -73,9 +73,6 @@ public class SavedLocationsFragment extends Fragment {
 //                        "Williamson"));
 
 
-        //identify whether a file exist
-        //if not exist,create a new file called savedRoute
-        //else store info into file
         this.loadRoutes();
 
         View root = inflater.inflate(R.layout.fragment_saved_locations, container, false);
