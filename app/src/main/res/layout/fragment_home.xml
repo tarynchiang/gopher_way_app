@@ -56,9 +56,9 @@
         android:bottomRightRadius="10dp"
         android:entries="@array/buildings"
         android:spinnerMode="dropdown"
+        android:textColor="#FFFFFF"
         android:topLeftRadius="10dp"
         android:topRightRadius="10dp"
-        android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
