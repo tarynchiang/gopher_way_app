@@ -39,7 +39,7 @@ public class DisplayNavigationOptions extends AppCompatActivity {
         //Decide which route option to begin displaying
         if(currentLocation == 20 && destination == 23){routeOption=0;}
         else if(currentLocation == 16 && destination == 36){routeOption=1;}
-        else if(currentLocation == 6 && destination ==7){routeOption=2;}
+        else if(currentLocation == 7 && destination ==6){routeOption=2;}
         else{routeOption=0;}
 
         //TextView for Direction Information -- Display first Step
