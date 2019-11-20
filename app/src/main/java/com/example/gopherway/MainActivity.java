@@ -181,7 +181,6 @@ public class MainActivity extends AppCompatActivity {
     public void saveRoute(View view){
         Spinner select_start = (Spinner) findViewById(R.id.spinner_start);
         String start = select_start.getSelectedItem().toString();
-
         Spinner select_destination = (Spinner) findViewById(R.id.spinner_destination);
         String destination = select_destination.getSelectedItem().toString();
 
@@ -190,31 +189,30 @@ public class MainActivity extends AppCompatActivity {
 
         File file = getFileStreamPath("savedRoutes");
         if(file == null || !file.exists()){
-            File newfile = new File("savedRoutes");
+            File newfile = new File(this.getFilesDir(), "savedRoutes");
 
             try{
                 newfile.createNewFile();
             }catch (IOException e) {
                 e.printStackTrace();}
-        }
+            }
 
-        try{
+            try{
 
-            fos = openFileOutput("savedRoutes", MODE_PRIVATE);
-            fos.write(routeName.getBytes());
-
-        }catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (fos != null) {
-                try {
-                    fos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                fos = openFileOutput("savedRoutes", MODE_APPEND);
+                fos.write(routeName.getBytes());
+            }catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (fos != null) {
+                    try {
+                        fos.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
-    }
 }

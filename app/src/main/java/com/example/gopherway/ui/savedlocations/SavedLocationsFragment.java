@@ -111,5 +111,4 @@ public class SavedLocationsFragment extends Fragment {
         }
     }
 
-
 }
